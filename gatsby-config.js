@@ -7,14 +7,15 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-sanity',
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
+        projectId: `ahpwryn6`,
+        dataset: `production`,
+        overlayDrafts: true,
+        watchMode: true,
+        token: 'sksYIQfHE0mOqkoA1drlnFCipkYsYL9BfTEq5UL9lggAcDQkIagv2qCuXpuplbm2CRGS7YAdXVVdr3s1nQfCImsKEbghUK8DjKzKXVFTmJdWEsekFwr3em0evf6MaREwtJzcbJvqAQnUuTagPpC5YtTUyDq2eoFR9PKiQyG5UagAaIPeKxSr'
+      }
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

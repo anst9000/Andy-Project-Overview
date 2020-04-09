@@ -1,21 +1,66 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import Image from 'gatsby-image';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
-const IndexPage = () => (
+export const query = graphql`
+  {
+    allSanityProject {
+      edges {
+        node {
+          title
+          description
+          slug {
+            current
+          }
+          image {
+            asset {
+              fluid {
+                ...GatsbySanityImageFluid
+              }
+            }
+          }
+          link
+        }
+      }
+    }
+  }
+`;
+
+const IndexPage = ({ data }) => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <h1>My Portfolio</h1>
+    <ul
+      style={{
+        listStyle: 'none',
+        display: 'flex',
+        alignItems: 'space-between',
+        padding: 0
+      }}
+    >
+      {data.allSanityProject.edges.map(({ node: project }) => (
+        <li
+          key={project.slug.current}
+          style={{
+            flex: '1 45%',
+            flexWrap: 'wrap',
+            maxWidth: '45%',
+            margin: '1rem'
+          }}
+        >
+          <h2 style={{ fontSize: '24px' }}>
+            <Link to={project.slug.current}>{project.title}</Link>
+          </h2>
+          <Image style={{ border: '2px solid black', marginBottom: '1rem' }} fluid={project.image.asset.fluid} alt={project.title} />
+          <p style={{ marginTop: '1rem' }}>{project.description}</p>
+          <p><Link to={project.slug.current}>See project details</Link></p>
+        </li>
+      ))}
+    </ul>
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;
