@@ -22,12 +22,25 @@ export const query = graphql`
 
 export default ({ data }) => (
   <Layout>
-    <h1>{data.sanityProject.title}</h1>
+    <div className="project-details"
+        style={{
+        maxWidth: '75%',
+        margin: '0 auto'
+      }}
+
+    >
+    <h1
+      style={{
+        paddingTop: '2rem'
+      }}
+    >{data.sanityProject.title}</h1>
 
     <Image
       fluid={data.sanityProject.image.asset.fluid}
       alt={data.sanityProject.title}
-      style={{ border: '1px solid black' }}
+      style={{
+        border: '1px solid black',
+      }}
     />
     <p style={{ marginTop: '1rem'}}><a href={data.sanityProject.link} style={{ fontWeight:'700' }}>{data.sanityProject.link}</a></p>
 
@@ -43,5 +56,6 @@ export default ({ data }) => (
       textTransform: 'uppercase'
     }}
     >Back to home</Link>
+    </div>
   </Layout>
 );

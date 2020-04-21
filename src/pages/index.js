@@ -32,34 +32,29 @@ export const query = graphql`
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>My Portfolio</h1>
-    <ul
-      style={{
-        listStyle: 'none',
-        display: 'flex',
-        alignItems: 'space-between',
-        padding: 0
-      }}
-    >
-      {data.allSanityProject.edges.map(({ node: project }) => (
-        <li
-          key={project.slug.current}
-          style={{
-            flex: '1 45%',
-            flexWrap: 'wrap',
-            maxWidth: '45%',
-            margin: '1rem'
-          }}
-        >
-          <h2 style={{ fontSize: '24px' }}>
-            <Link to={project.slug.current}>{project.title}</Link>
-          </h2>
-          <Image style={{ border: '2px solid black', marginBottom: '1rem' }} fluid={project.image.asset.fluid} alt={project.title} />
-          <p style={{ marginTop: '1rem' }}>{project.description}</p>
-          <p><Link to={project.slug.current}>See project details</Link></p>
-        </li>
-      ))}
-    </ul>
+    <h1 className="projects-header">My Projects</h1>
+      <ul
+        style={{
+          listStyle: 'none',
+        }}
+      >
+      <div className="container">
+        {data.allSanityProject.edges.map(({ node: project }) => (
+          <li className="project-list"
+            key={project.slug.current}
+          >
+            <h2 style={{ fontSize: '24px' }}>
+              <Link to={project.slug.current}>
+                {(project.title).length >= 25 ? (project.title).substring(0, 25) + `...` : project.title}
+              </Link>
+            </h2>
+            <Image style={{ border: '2px solid black', marginBottom: '1rem' }} fluid={project.image.asset.fluid} alt={project.title} />
+            <p style={{ marginTop: '1rem' }}>{(project.description).substring(0, 75)}...</p>
+            <p><Link to={project.slug.current}>See project details</Link></p>
+          </li>
+        ))}
+        </div>
+      </ul>
   </Layout>
 );
 
