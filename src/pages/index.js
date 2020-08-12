@@ -33,6 +33,9 @@ const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <h1 className="projects-header">My Projects</h1>
+	<div className="background">
+		<p>This particular site is written in Gatsby and GraphQL. It is run by from a headless CMS that lies on SanityIO. The project is divided into two separate ones also on GitHub. It is deployed on Netlify.com and connected to my GitHub account.</p>
+	</div>
       <ul
         style={{
           listStyle: 'none',
