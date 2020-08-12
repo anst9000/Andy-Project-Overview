@@ -642,7 +642,7 @@ pre tt:after {
   background-color: #9e9e9e;
 }
 
-.projects-header {
+.project-header {
   /* font-size: 3rem; */
   padding: 2rem 3rem;
 }
@@ -667,7 +667,7 @@ footer {
     font-size: 1.5rem;
   }
 
-  .projects-details h1 {
+  .project-details h1 {
     font-size: 1.5rem;
   }
 
@@ -675,4 +675,9 @@ footer {
     padding: 2rem 0;
   }
 
+  .project-background {
+	  max-width: 750px;
+	  margin: 0 auto;
+	  background-color: 66ffff;
+  }
 }
