@@ -63,9 +63,9 @@ const IndexPage = ({ data }) => (
 		<hr />
 
 		<p>
-			<strong><Link to="https://github.com/anst9000/Andy-Project-Overview-Gatsby">anst9000/Andy-Project-Overview-Gatsby</Link></strong>
+			<strong><a href="https://github.com/anst9000/Andy-Project-Overview-Gatsby">anst9000/Andy-Project-Overview-Gatsby</a></strong>
 			<br />
-			<strong><Link to="https://github.com/anst9000/Andy-Project-Overview-Sanity">anst9000/Andy-Project-Overview-Sanity</Link></strong>
+			<strong><a href="https://github.com/anst9000/Andy-Project-Overview-Sanity">anst9000/Andy-Project-Overview-Sanity</a></strong>
 			<br />
 		</p>
 
@@ -78,7 +78,7 @@ const IndexPage = ({ data }) => (
 			The link to this site on Netlify is
 		</p>
 		<p>
-			<strong><Link to="https://wonderful-goldstine-d8181a.netlify.app">https://wonderful-goldstine-d8181a.netlify.app</Link></strong>
+			<strong><a href="https://wonderful-goldstine-d8181a.netlify.app">https://wonderful-goldstine-d8181a.netlify.app</a></strong>
 		</p>
 		<p>
 			I will get a separate domain name from Namecheap.com where I have the rest of my domains and connect to this site.
