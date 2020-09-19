@@ -32,7 +32,6 @@ export const query = graphql`
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1 className="project-header">Some of Anders "Acke" Strömberg's Projects</h1>
 	<div
 		className="project-background"
 		style={{
@@ -40,17 +39,20 @@ const IndexPage = ({ data }) => (
 			maxWidth: '1000px',
 			margin: '0 auto',
 			padding: '0.5rem 1rem' }}>
+    <h1 className="project-header">Some of Anders "Acke" Strömberg's Projects</h1>
 		<p style={{ fontSize: '1rem' }}>
-			Last update: 12th august 2020
+			Last update: 19th september 2020
 		</p>
 		<p>
-			The main focus for all of these projects are the techniques used to create them.
-			A lot can be said regarding the look and appearance. In fact I have some quite
-			strong opinions of the 'look-and-feel' for Internet sites.
-			But I do also, which is more important for me, have a strong interrest for the
-			different techniques used to create, build and deploy sites, both locally and on the cloud.
-			All of the projects listed below are written by me, <strong>Anders Strömberg</strong>. I have learnt from following tutorials
-			and reading blogs and afterwards trying it out on my own.
+			The main focus for all of these projects are the techniques behind to create them.
+			What I find most interesting is learning and mastering new techniques. Trying to
+      understand how everything fits together and how to best use all parts available.
+      I have a always loved the feeling you get when you have created something and it works.
+      And as a next step building and deploying sites, both locally and on the cloud, and
+      seeing the results online, a working creation made by me. It is really satisfactory.
+			All of the projects listed below are written by me, <strong>Anders Strömberg</strong>.
+      I have learnt from reading books, following tutorials online and reading blogs.
+      Afterwards trying out everything on my own and getting my head around it.
 			Under project details for every project there are information about the creation of the project,
 			the techniques that has been used and some useful links to GitHub or other Internet pages.
 		</p>
@@ -81,8 +83,10 @@ const IndexPage = ({ data }) => (
 			<strong><a href="https://wonderful-goldstine-d8181a.netlify.app">https://wonderful-goldstine-d8181a.netlify.app</a></strong>
 		</p>
 		<p>
-			I will get a separate domain name from Namecheap.com where I have the rest of my domains and connect to this site.
-			Hopefully this week. We'll see!
+			Now the custom domain name is
+		</p>
+		<p>
+			<strong><a href="https://ackeprojects.xyz/">https://ackeprojects.xyz/</a></strong>
 		</p>
 
 	</div>
@@ -102,7 +106,7 @@ const IndexPage = ({ data }) => (
               </Link>
             </h2>
             <Image style={{ border: '2px solid black', marginBottom: '1rem' }} fluid={project.image.asset.fluid} alt={project.title} />
-            <p style={{ marginTop: '1rem' }}>{(project.description).substring(0, 75)}...</p>
+            <p style={{ marginTop: '1rem' }}>{(project.description).substring(0, 100)}...</p>
             <p><Link to={project.slug.current}>See project details</Link></p>
           </li>
         ))}
