@@ -25,13 +25,14 @@ export default ({ data }) => (
     <div className="project-details"
         style={{
         maxWidth: '75%',
-        margin: '0 auto'
+        margin: '0 auto 1rem auto'
       }}
 
     >
     <h1
       style={{
-        paddingTop: '2rem'
+        paddingTop: '2rem',
+        textAlign: 'center'
       }}
     >{data.sanityProject.title}</h1>
 
@@ -39,10 +40,14 @@ export default ({ data }) => (
       fluid={data.sanityProject.image.asset.fluid}
       alt={data.sanityProject.title}
       style={{
+        width: '75%',
+        height: '75%',
+        display: 'block',
+        margin: '0 auto',
         border: '1px solid black',
       }}
     />
-    <p style={{ marginTop: '1rem'}}><a href={data.sanityProject.link} style={{ fontWeight:'700' }}>{data.sanityProject.link}</a></p>
+    <p style={{ marginTop: '1rem', textAlign: 'center'}}><a href={data.sanityProject.link} style={{ fontWeight:'700' }}>{data.sanityProject.link}</a></p>
 
     <p>{data.sanityProject.description}</p>
     <Link to="/"

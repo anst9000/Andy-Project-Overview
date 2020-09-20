@@ -21,7 +21,7 @@ const Layout = ({ children }) => (
         <Header siteTitle={data.site.siteMetadata.title} />
         <div className="show-case">
           {children}
-          <footer>
+          <footer style={{ padding: '1rem auto', textAlign: 'center'}}>
             © {new Date().getFullYear()}, Built with
             {` `}
             <a href="https://www.gatsbyjs.org">Gatsby</a>
